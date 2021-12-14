@@ -4,27 +4,28 @@
 
 
 
-### 使用说明
+### 1. 使用说明
 
-#### 支持及BUG反馈
-TG : [TG](https://t.me/+ZkUDlH2Fecc3MGM1)
+#### 1.支持及BUG反馈
+- TG : [TG](https://t.me/+ZkUDlH2Fecc3MGM1)
+- QQ群 : 724855814
+- wechat 
+![Wechat](Wechat.jpeg)
 
-QQ群 : 724855814
-
-
-
-系统支持
-
+#### 2.系统支持
 - 只支持Linux操作系统.
-#### 启动方式
 
+#### 3. 启动方式
 下载链接在
 
-https://github.com/YusongWang/ETH-PoolProxy/releases
+https://github.com/dothinkdone/minerProxy/releases
 
 启动命令为
+
 ./proxy -c config.yaml
+
 不传入-c 命令。默认查找当前目录下的default.yaml
+
 此方式可使用相对路径日志路径及证书路径等。
 
 ##### 后台常驻内存方式
@@ -33,9 +34,7 @@ nohup ./proxy >/dev/null 2>&1 &
 ```
 ##### docker 模式
 
-https://hub.docker.com/r/yusongwang/eth-proxy
-
-docker pull yusongwang/eth-proxy:v0.1.0
+TODO
 
 需要自己定义log日志路径及-c命令指定配置文件路径。
 
