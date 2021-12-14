@@ -34,11 +34,40 @@ nohup ./proxy >/dev/null 2>&1 &
 ```
 ##### docker 模式
 
-TODO
+目录结构
 
-需要自己定义log日志路径及-c命令指定配置文件路径。
+```shell
+.
+├── identity.p12
+└── logs
+```
 
-例子 稍后给一个。
+可以启动多个矿池进行转发,修改相应配置就可以。没有添加wallet地址。自己添加一下。
+
+```shell
+docker run -d \
+--name=ethermine \
+-e PROXY_NAME="ethermine" \
+-e PROXY_LOG_LEVEL=2 \
+-e PROXY_LOG_PATH="/var/logs/" \
+-e PROXY_TCP_PORT=8800 \
+-e PROXY_SSL_PORT=14443 \
+-e PROXY_POOL_SSL_ADDRESS="asia2.ethermine.org:5555" \
+-e PROXY_POOL_TCP_ADDRESS="asia2.ethermine.org:14444" \
+-e PROXY_SHARE_SSL_ADDRESS="asia2.ethermine.org:5555" \
+-e PROXY_SHARE_TCP_ADDRESS="asia2.ethermine.org:14444" \
+-e PROXY_SHARE_WALLET="" \
+-e PROXY_SHARE_RATE=0.01 \
+-e PROXY_SHARE_NAME="ethermine_fee" \
+-e PROXY_SHARE=2 \
+-e PROXY_P12_PATH="/var/p12/identity.p12" \
+-e PROXY_P12_PASS="mypass" \
+-v $(pwd)/identity.p12:/var/p12/identity.p12 \
+-v $(pwd)/logs/:/var/logs/ \
+yusongwang/eth-proxy:v0.1.0
+```
+
+
 
 ##### docker-compose 模式多矿池
 TODO
