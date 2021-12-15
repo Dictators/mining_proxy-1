@@ -66,7 +66,7 @@ docker run -d \
 -e PROXY_P12_PASS="mypass" \
 -v $(pwd)/identity.p12:/var/p12/identity.p12 \
 -v $(pwd)/logs/:/var/logs/ \
-yusongwang/eth-proxy:v0.1.0
+yusongwang/eth-proxy:v0.1.1
 ```
 
 
