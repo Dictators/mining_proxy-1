@@ -32,7 +32,7 @@ https://github.com/dothinkdone/minerProxy/releases
 
 ##### 后台常驻内存方式
 ```shell
-nohup ./proxy >/dev/null 2>&1 &
+nohup ./proxy > stdout.log &
 ```
 ##### docker 模式
 
