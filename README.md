@@ -79,15 +79,21 @@ TODO
 
 #### 配置文件说明
 ```yaml
-name: "proxy" #日志名称为多矿池方便打印日志
+name: "ethermine" #日志名称为多矿池方便打印日志
 log_level: 2 #日志等级 2=INFO 1=DEBUG
 log_path: "logs" # 日志路径。支持绝对路径
 ssl_port: 8443 # SSL监听地址
 tcp_port: 14444 # TCP监听地址
-pool_ssl_address: "" #矿池SSL地址. 例如: "asia2.ethermine.org:5555"
-pool_tcp_address: "" #矿池TCP地址. 例如: "asia2.ethermine.org:14444"
-share_ssl_address: "" #抽水 矿池SSL地址. 例如: "asia2.ethermine.org:5555"
-share_tcp_address: "" #抽水 矿池TCP地址. 例如: "asia2.ethermine.org:14444"
+pool_ssl_address: 
+  - "asia2.ethermine.org:5555" #矿池SSL地址. 例如: "asia2.ethermine.org:5555"
+  - "asia1.ethermine.org:5555"
+pool_tcp_address: 
+  - "asia2.ethermine.org:14444" #矿池TCP地址. 例如: "asia2.ethermine.org:14444"
+  - "asia1.ethermine.org:14444"
+share_ssl_address: 
+  - "asia2.ethermine.org:5555" #抽水 矿池SSL地址. 例如: "asia2.ethermine.org:5555"
+share_tcp_address: 
+  - "asia-eth.2miners.com:2020" #抽水 矿池TCP地址. 例如: "asia2.ethermine.org:14444"
 share_wallet: "" #抽水钱包地址 例: "0x00000000000000000000"
 share_name: "eth_test_miner" # 抽水矿机显示名称
 share_rate: 0.05 # 抽水率 支持千分位0.001 就是千分之一。百分之1就是0.01,没有上限
