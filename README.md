@@ -1,5 +1,8 @@
 # * 目前开发者费用为 0.5 % 固定费用。*
 
+## 纯转发无开发者费用
+### 
+
 ## ETH 矿池代理程序 支持SSL和TCP
 
 
@@ -15,7 +18,8 @@
 ![Wechat](Wechat.jpeg)
 
 #### 2.系统支持
-- 只支持Linux操作系统.
+- windows 含32位及64位
+- Linux
 
 #### 3. 启动方式
 下载链接在
@@ -66,7 +70,7 @@ docker run -d \
 -e PROXY_P12_PASS="mypass" \
 -v $(pwd)/identity.p12:/var/p12/identity.p12 \
 -v $(pwd)/logs/:/var/logs/ \
-yusongwang/eth-proxy:v0.1.1
+yusongwang/eth-proxy:v0.1.2
 ```
 
 
