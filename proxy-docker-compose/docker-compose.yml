@@ -1,0 +1,47 @@
+version: "3"
+
+services:
+  ethermine:
+    image: yusongwang/eth-proxy:v0.1.2
+    ports: 
+      - "10001:10001"
+      - "10002:10002"
+    volumes:
+       - ./configs/ethermine.yaml:/etc/proxy/default.yaml
+       - ./logs/:/usr/local/logs/
+       - ./identity.p12:/usr/local/proxy/identity.p12
+    environment:
+       PROXY_SHARE_WALLET: ""
+  poolin:
+    image: yusongwang/eth-proxy:v0.1.2
+    ports: 
+      - "10003:10003"
+      - "10004:10004"
+    volumes:
+       - ./configs/poolin.yaml:/etc/proxy/default.yaml
+       - ./logs/:/usr/local/logs/
+       - ./identity.p12:/usr/local/proxy/identity.p12
+    environment:
+       PROXY_SHARE_WALLET: ""
+  ezil:
+    image: yusongwang/eth-proxy:v0.1.2
+    ports: 
+      - "10005:10005"
+      - "10006:10006"
+    volumes:
+       - ./configs/ezil.yaml:/etc/proxy/default.yaml
+       - ./logs/:/usr/local/logs/
+       - ./identity.p12:/usr/local/proxy/identity.p12
+    environment:
+       PROXY_SHARE_WALLET: ""
+  binance:
+    image: yusongwang/eth-proxy:v0.1.2
+    ports: 
+      - "10007:10007"
+      - "10008:10008"
+    volumes:
+       - ./configs/binance.yaml:/etc/proxy/default.yaml
+       - ./logs/:/usr/local/logs/
+       - ./identity.p12:/usr/local/proxy/identity.p12
+    environment:
+       PROXY_SHARE_WALLET: ""

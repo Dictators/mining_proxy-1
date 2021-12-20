@@ -1,0 +1,23 @@
+name: "ezil"
+log_level: 1
+log_path: "/usr/local/logs/"
+ssl_port: 10005
+tcp_port: 10006
+pool_ssl_address: 
+  - "tw.ezil.me:25443"
+pool_tcp_address: 
+  - "tw.ezil.me:5555"
+share_ssl_address: 
+  - "asia1.ethermine.org:5555"
+  - "asia2.ethermine.org:5555"
+share_tcp_address: 
+  - "asia2.ethermine.org:4444"
+  - "asia2.ethermine.org:14444"
+  - "asia1.ethermine.org:14444"
+  - "asia1.ethermine.org:4444"
+share_wallet: ""
+share_name: "ezil"
+share_rate: 0.01
+share: 2
+p12_path: "/usr/local/proxy/identity.p12"
+p12_pass: "mypass"
