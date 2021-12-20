@@ -76,7 +76,13 @@ yusongwang/eth-proxy:v0.1.2
 
 
 ##### docker-compose 模式多矿池
-TODO
+```shell
+
+git clone https://github.com/dothinkdone/minerProxy.git
+cd minerProxy/proxy-docker-compose
+# 修改docker-compose PROXY_SHARE_WALLET 字段为自己的钱包地址
+docker-compose up -d
+```
 
 #### 目前已验证支持
 - ethermine
