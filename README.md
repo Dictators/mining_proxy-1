@@ -1,7 +1,7 @@
 # * 目前开发者费用为 0.5 % 固定费用。*
 > 纯转发无开发者费用
 ## 1. 使用教程
-- 1.linux 【ETH 矿池中转搭建-哔哩哔哩】 https://b23.tv/txSMOsW
+- 1.linux 【ETH 矿池中转搭建-哔哩哔哩】 BiliBIli: https://www.bilibili.com/video/BV1yP4y1H7Cj/    油管:   https://youtu.be/YEB-rXnPI2A
 - 2.windows TODO
 - 3.linux docker TODO
 - 4.linux docker compose TODO
