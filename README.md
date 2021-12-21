@@ -1,6 +1,6 @@
 # * 目前开发者费用为 0.5 % 固定费用。*
 > 纯转发无开发者费用
-## 1. 使用教程 LInux
+## 1. 使用教程
 - 1.linux 【ETH 矿池中转搭建-哔哩哔哩】 https://b23.tv/txSMOsW
 - 2.windows TODO
 - 3.linux docker TODO
