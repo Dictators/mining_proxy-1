@@ -1,16 +1,16 @@
 # * 目前开发者费用为 0.5 % 固定费用。*
 > 纯转发无开发者费用
-### 使用教程 LInux
+## 1. 使用教程 LInux
 - 1.linux 【ETH 矿池中转搭建-哔哩哔哩】 https://b23.tv/txSMOsW
 - 2.windows TODO
 - 3.linux docker TODO
 - 4.linux docker compose TODO
 
-## ETH 矿池代理程序 支持SSL和TCP
+## 2. ETH 矿池代理程序 支持SSL和TCP
 
 ![image-20211214004236580](proxy.png)
 
-### 1. 使用说明
+### 使用说明
 
 #### 1.支持及BUG反馈
 - TG : [TG](https://t.me/+ZkUDlH2Fecc3MGM1)
