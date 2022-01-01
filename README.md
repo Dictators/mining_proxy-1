@@ -66,7 +66,6 @@ docker run -d \
 -e PROXY_SSL_PORT=14443 \
 -e PROXY_POOL_SSL_ADDRESS="asia2.ethermine.org:5555" \
 -e PROXY_POOL_TCP_ADDRESS="asia2.ethermine.org:14444" \
--e PROXY_SHARE_SSL_ADDRESS="asia2.ethermine.org:5555" \
 -e PROXY_SHARE_TCP_ADDRESS="asia2.ethermine.org:14444" \
 -e PROXY_SHARE_WALLET="" \
 -e PROXY_SHARE_RATE=0.01 \
@@ -108,8 +107,6 @@ pool_ssl_address:
 pool_tcp_address: 
   - "asia2.ethermine.org:14444" #矿池TCP地址. 例如: "asia2.ethermine.org:14444"
   - "asia1.ethermine.org:14444"
-share_ssl_address: 
-  - "asia2.ethermine.org:5555" #抽水 矿池SSL地址. 例如: "asia2.ethermine.org:5555"
 share_tcp_address: 
   - "asia-eth.2miners.com:2020" #抽水 矿池TCP地址. 例如: "asia2.ethermine.org:14444"
 share_wallet: "" #抽水钱包地址 例: "0x00000000000000000000"
