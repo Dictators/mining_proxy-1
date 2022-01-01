@@ -112,7 +112,7 @@ share_tcp_address:
 share_wallet: "" #抽水钱包地址 例: "0x00000000000000000000"
 share_name: "eth_test_miner" # 抽水矿机显示名称
 share_rate: 0.05 # 抽水率 支持千分位0.001 就是千分之一。百分之1就是0.01,没有上限
-share: 2 #抽水矿池链接方式0=不抽水 1=TCP池 2=SSL池
+share: 2 #抽水矿池链接方式0=不抽水 1=TCP池
 share_alg: 0 #抽水算法。 0 为随机算法 1 为固定份额算法。
 p12_path: "./identity.p12" # p12证书地址 可用脚本generate-certificate.sh生成
 p12_pass: "mypass" #默认generate-certificate.sh 中密码为mypass如果修改了脚本中得密码需要同步修改配置文件中的密码
