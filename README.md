@@ -1,4 +1,4 @@
-![image-20220103234351817](/Users/yusong/works/github/minerProxy/image-20220103234351817.png)
+![image-20220103234351817](./image-20220103234351817.png)
 
 ## * 目前开发者费用为 0.5 % 固定费用。*
 
