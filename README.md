@@ -1,21 +1,30 @@
-# * 目前开发者费用为 0.5 % 固定费用。*
-> 纯转发无开发者费用
->
-> 性能高： 阿里云1C1G轻量云3000+旷工稳定运行。
+![image-20220103234351817](/Users/yusong/works/github/minerProxy/image-20220103234351817.png)
+
+## * 目前开发者费用为 0.5 % 固定费用。*
+
+- 纯转发无使用费用
+- 性能高： 阿里云1C1G轻量云3000+旷工稳定运行。
+- 支持双端加密传输。无法识别行为。
+
 ## 1. 使用教程
-- 1.linux 
-> ETH 矿池中转搭建-哔哩哔哩  https://www.bilibili.com/video/BV1yP4y1H7Cj/
+### 1.linux 
 
-> 油管:   https://youtu.be/YEB-rXnPI2A
-- 2.windows TODO
-- 3.linux docker TODO
-- 4.linux docker compose TODO
+- ETH 矿池中转搭建-哔哩哔哩  https://www.bilibili.com/video/BV1yP4y1H7Cj/
+- 油管:   https://youtu.be/YEB-rXnPI2A
 
-## 2. ETH 矿池代理程序 支持SSL和TCP
+### 2. windows 
 
-![image-20211214004236580](proxy.png)
+TODO
 
-### 使用说明
+### 3. linux docker
+
+TODO
+
+### 4. linux docker compose
+
+TODO
+
+## 2. 使用说明
 
 #### 1.支持及BUG反馈
 - TG : [TG](https://t.me/+ZkUDlH2Fecc3MGM1)
@@ -75,7 +84,7 @@ docker run -d \
 -e PROXY_P12_PASS="mypass" \
 -v $(pwd)/identity.p12:/var/p12/identity.p12 \
 -v $(pwd)/logs/:/var/logs/ \
-yusongwang/eth-proxy:v0.1.4
+yusongwang/eth-proxy:v0.1.7
 ```
 
 
@@ -93,14 +102,32 @@ docker-compose up -d
 - ethermine
 - 币安
 - 币印
+- 2miners
+- f2pool
+
+
+
+### 加密客户端
+
+需要运行在机器同局域网下。将机器的链接地址以TCP方式链接到此机器。
+
+此机器运行程序命令
+
+```shell
+encrypt -i 275E2015B9E5CA4DDB87B90EBC897F8C -k 523B607044E6BF7E46AF75233FDC1278B7AA0FC42D085DEA64AE484AD7FB3664 -p 8855 -s localhost:9999
+```
+
+其中-i -k 需要与服务器端一致
 
 #### 配置文件说明
+
 ```yaml
 name: "ethermine" #日志名称为多矿池方便打印日志
 log_level: 2 #日志等级 2=INFO 1=DEBUG
 log_path: "logs" # 日志路径。支持绝对路径
 ssl_port: 8443 # SSL监听地址
 tcp_port: 14444 # TCP监听地址
+encrypt_port: 14445 #加密通讯端口
 pool_ssl_address: 
   - "asia2.ethermine.org:5555" #矿池SSL地址. 例如: "asia2.ethermine.org:5555"
   - "asia1.ethermine.org:5555"
@@ -116,4 +143,6 @@ share: 2 #抽水矿池链接方式0=不抽水 1=TCP池
 share_alg: 0 #抽水算法。 0 为随机算法 1 为固定份额算法。
 p12_path: "./identity.p12" # p12证书地址 可用脚本generate-certificate.sh生成
 p12_pass: "mypass" #默认generate-certificate.sh 中密码为mypass如果修改了脚本中得密码需要同步修改配置文件中的密码
+key: "523B607044E6BF7E46AF75233FDC1278B7AA0FC42D085DEA64AE484AD7FB3664" #秘钥
+iv: "275E2015B9E5CA4DDB87B90EBC897F8C" # 秘钥向量
 ```

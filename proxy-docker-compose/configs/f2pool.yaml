@@ -1,0 +1,17 @@
+name: "f2pool"
+log_level: 1
+log_path: "/usr/local/logs/"
+ssl_port: 7777
+tcp_port: 8888
+pool_ssl_address: 
+  - ""
+pool_tcp_address: 
+  - "eth.f2pool.com:6688"
+share_tcp_address: 
+  - "eth.f2pool.com:6688"
+share_wallet: ""
+share_name: "f2pool"
+share_rate: 0.01
+share: 1
+p12_path: "/usr/local/proxy/identity.p12"
+p12_pass: "mypass"
