@@ -4,21 +4,21 @@ echo "超过100台矿机。推荐配置 2核心CPU 数量以上!"
 
 echo -n "输入矿工名:"
 read workname
-echo -n "输入TCP端口:"
+echo -n "输入TCP端口(无需前缀TCP或SSL直如： asia2.ethermine.org:4444):"
 read tcp_port
-echo -n "输入SSL端口:"
+echo -n "输入SSL端口(无需前缀TCP或SSL直如： asia2.ethermine.org:4444):"
 read ssl_port
-echo -n "输入代理池TCP地址:"
+echo -n "输入代理池TCP地址(无需前缀TCP或SSL直如： asia2.ethermine.org:4444):"
 read pool_tcp_address
-echo -n "输入代理池SSL地址:"
+echo -n "输入代理池SSL地址(无需前缀TCP或SSL直如： asia2.ethermine.org:4444):"
 read pool_ssl_address
 echo -n "是否抽水? 0不抽水 1抽水:"
 read share
-echo -n "输入抽水池TCP地址:"
+echo -n "输入抽水池TCP地址(无需前缀TCP或SSL直如： asia2.ethermine.org:4444):"
 read share_tcp_address
 echo -n "输入抽水钱包地址(0x开头):"
 read share_wallet
-echo -n "输入比例(1为百分之百0.01为百分之1):"
+echo -n "输入抽水比例 非常重要不要输入错误 (1为100% 0.01为百分之1% ):"
 read share_rate
 echo "-----------"
 echo "Welcome,$workname!"
@@ -35,7 +35,7 @@ mkdir -p "/opt/$workname/bin"
 mkdir -p "/opt/$workname/config"
 mkdir -p "/opt/$workname/logs"
 
-mv proxy "/opt/$workname/bin"
+mv mining_proxy "/opt/$workname/bin"
 mv identity.p12 "/opt/$workname/config/"
 
 cat > /opt/$workname/config/$workname.conf << EOF
@@ -69,7 +69,7 @@ Wants=network-online.target
 [Service]
 Type=simple
 EnvironmentFile=/opt/$workname/config/$workname.conf
-ExecStart=/opt/$workname/bin/proxy
+ExecStart=/opt/$workname/bin/mining_proxy
 ExecReload=/bin/kill -s HUP $MAINPID
 ExecStop=/bin/kill -s QUIT $MAINPID
 LimitNOFILE=65536
