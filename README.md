@@ -1,4 +1,4 @@
-![image-20220109015431016](/Users/yusong/works/github/mining_proxy/image-20220109015431016.png)
+![image-20220109015431016](./image-20220109015431016.png)
 
 ## 开发者费率说明
 
