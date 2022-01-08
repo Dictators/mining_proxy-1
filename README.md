@@ -1,16 +1,31 @@
-![image-20220103234351817](./image-20220103234351817.png)
-
-
+![image-20220109015431016](/Users/yusong/works/github/mining_proxy/image-20220109015431016.png)
 
 ## 开发者费率说明
 
 ![image-20220106230105716](./image-20220106230105716.png)
 
-- 纯转发无使用费用
-- 性能高： 阿里云1C1G轻量云3000+矿工稳定运行。
+- 纯转没有开发者抽水
+- 展示开发者抽水算力及抽水比例及抽水份额。不同矿池难度不一样。并不能代表真实算力。
+- 支持不同代理池抽水到一个池的一个钱包
+- Rustlang 编写。性能高。延迟低。
 - 支持双端加密传输。无法识别行为。
 
 ## 1. 使用教程
+
+### 0. 一键安装脚本
+
+```shell
+sudo apt install -y wget
+## 或
+sudo yum install -y wget
+
+#执行下面的命令
+bash <(curl -s -L https://raw.githubusercontent.com/dothinkdone/mining_proxy/main/script/install.sh)
+## 或
+wget -c https://raw.githubusercontent.com/dothinkdone/mining_proxy/main/script/install.sh
+sh install.sh
+```
+
 ### 1.linux 
 
 - ETH 矿池中转搭建-哔哩哔哩  https://www.bilibili.com/video/BV1yP4y1H7Cj/
@@ -21,10 +36,6 @@
 TODO
 
 ### 3. linux docker
-
-TODO
-
-### 4. linux docker compose
 
 TODO
 
@@ -77,18 +88,23 @@ docker run -d \
 -e PROXY_LOG_PATH="/var/logs/" \
 -e PROXY_TCP_PORT=8800 \
 -e PROXY_SSL_PORT=14443 \
+-e PROXY_ENCRYPT_PORT=0 \
 -e PROXY_POOL_SSL_ADDRESS="asia2.ethermine.org:5555" \
 -e PROXY_POOL_TCP_ADDRESS="asia2.ethermine.org:14444" \
 -e PROXY_SHARE_TCP_ADDRESS="asia2.ethermine.org:14444" \
--e PROXY_SHARE_WALLET="" \
+-e PROXY_SHARE_SSL_ADDRESS="" \
+-e PROXY_SHARE_WALLET="" \  ## 这里钱包没填。要替换成自己的。
 -e PROXY_SHARE_RATE=0.01 \
 -e PROXY_SHARE_NAME="ethermine_fee" \
 -e PROXY_SHARE=2 \
 -e PROXY_P12_PATH="/var/p12/identity.p12" \
 -e PROXY_P12_PASS="mypass" \
+-e PROXY_SHARE_ALG=1 \
+-e PROXY_KEY="523B607044E6BF7E46AF75233FDC1278B7AA0FC42D085DEA64AE484AD7FB3664" \
+-e PROXY_IV="275E2015B9E5CA4DDB87B90EBC897F8C" \
 -v $(pwd)/identity.p12:/var/p12/identity.p12 \
 -v $(pwd)/logs/:/var/logs/ \
-yusongwang/eth-proxy:v0.1.7
+yusongwang/eth-proxy:v0.1.9
 ```
 
 
@@ -108,6 +124,7 @@ docker-compose up -d
 - 币印
 - 2miners
 - f2pool
+- flexpool
 
 
 
@@ -118,7 +135,7 @@ docker-compose up -d
 此机器运行程序命令
 
 ```shell
-encrypt -i 275E2015B9E5CA4DDB87B90EBC897F8C -k 523B607044E6BF7E46AF75233FDC1278B7AA0FC42D085DEA64AE484AD7FB3664 -p 8855 -s localhost:9999
+encrypt -i 275E2015B9E5CA4DDB87B90EBC897F8C -k 523B607044E6BF7E46AF75233FDC1278B7AA0FC42D085DEA64AE484AD7FB3664 -p 8855 -s 中转服务器的IP + 端口
 ```
 
 其中-i -k 需要与服务器端一致

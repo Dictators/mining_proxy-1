@@ -62,7 +62,7 @@ EOF
 
 cat > /usr/lib/systemd/system/$workname.service << EOF
 [Unit]
-Description=Proxy
+Description=mining_proxy
 After=network.target
 After=network-online.target
 Wants=network-online.target
@@ -87,6 +87,7 @@ echo "加入开机自启动 $workname"
 
 echo "$workname 已经启动"
 echo "启动命令: systemctl start $workname"
+echo "运行状态查看: systemctl status $workname"
 echo "停止命令: systemctl stop $workname"
 echo "重启命令(修改配置后执行此命令即可): systemctl restart $workname"
 echo "查看日志: journalctl -fu $workname"
