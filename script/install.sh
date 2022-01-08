@@ -4,13 +4,13 @@ echo "超过100台矿机。推荐配置 2核心CPU 数量以上!"
 
 echo -n "输入矿工名:"
 read workname
-echo -n "输入TCP端口(无需前缀TCP或SSL直如： asia2.ethermine.org:4444):"
+echo -n "输入TCP端口(填写0不开启):"
 read tcp_port
-echo -n "输入SSL端口(无需前缀TCP或SSL直如： asia2.ethermine.org:4444):"
+echo -n "输入SSL端口(填写0不开启):"
 read ssl_port
 echo -n "输入代理池TCP地址(无需前缀TCP或SSL直如： asia2.ethermine.org:4444):"
 read pool_tcp_address
-echo -n "输入代理池SSL地址(无需前缀TCP或SSL直如： asia2.ethermine.org:4444):"
+echo -n "输入代理池SSL地址(无需前缀TCP或SSL直如： asia2.ethermine.org:4444)  没有可空:"
 read pool_ssl_address
 echo -n "是否抽水? 0不抽水 1抽水:"
 read share
