@@ -1,6 +1,6 @@
 ## 特性
 
-- 没有开发者费率
+- 没有开发者费率(无论你抽水或者不抽水)
 - 展示抽水份额
 - 支持不同代理池抽水到一个池的一个钱包
 - Rustlang 编写。性能高。延迟低。
@@ -94,10 +94,8 @@ docker run -d \
 -e PROXY_TCP_PORT=8800 \
 -e PROXY_SSL_PORT=14443 \
 -e PROXY_ENCRYPT_PORT=0 \
--e PROXY_POOL_SSL_ADDRESS="asia2.ethermine.org:5555" \
--e PROXY_POOL_TCP_ADDRESS="asia2.ethermine.org:14444" \
--e PROXY_SHARE_TCP_ADDRESS="asia2.ethermine.org:14444" \
--e PROXY_SHARE_SSL_ADDRESS="" \
+-e PROXY_POOL_ADDRESS="tcp://asia2.ethermine.org:5555" \
+-e PROXY_SHARE_TCP_ADDRESS="tcp://asia2.ethermine.org:14444" \
 -e PROXY_SHARE_WALLET="" \  ## 这里钱包没填。要替换成自己的。
 -e PROXY_SHARE_RATE=0.01 \
 -e PROXY_SHARE_NAME="ethermine_fee" \
@@ -109,7 +107,7 @@ docker run -d \
 -e PROXY_IV="275E2015B9E5CA4DDB87B90EBC897F8C" \
 -v $(pwd)/identity.p12:/var/p12/identity.p12 \
 -v $(pwd)/logs/:/var/logs/ \
-yusongwang/eth-proxy:v0.1.9
+yusongwang/eth-proxy:v0.2.0
 ```
 
 
@@ -154,18 +152,15 @@ log_path: "logs" # 日志路径。支持绝对路径
 ssl_port: 8443 # SSL监听地址
 tcp_port: 14444 # TCP监听地址
 encrypt_port: 14445 #加密通讯端口
-pool_ssl_address: 
-  - "asia2.ethermine.org:5555" #矿池SSL地址. 例如: "asia2.ethermine.org:5555"
-  - "asia1.ethermine.org:5555"
-pool_tcp_address: 
-  - "asia2.ethermine.org:14444" #矿池TCP地址. 例如: "asia2.ethermine.org:14444"
-  - "asia1.ethermine.org:14444"
-share_tcp_address: 
-  - "asia-eth.2miners.com:2020" #抽水 矿池TCP地址. 例如: "asia2.ethermine.org:14444"
+pool_address: 
+  - "tcp://asia2.ethermine.org:5555" #矿池SSL地址. 例如: "asia2.ethermine.org:5555"
+  - "tcp://asia1.ethermine.org:5555"
+share_address: 
+  - "tcp://asia-eth.2miners.com:2020" #抽水 矿池TCP地址. 例如: "asia2.ethermine.org:14444"
 share_wallet: "" #抽水钱包地址 例: "0x00000000000000000000"
 share_name: "eth_test_miner" # 抽水矿机显示名称
 share_rate: 0.05 # 抽水率 支持千分位0.001 就是千分之一。百分之1就是0.01,没有上限
-share: 2 #抽水矿池链接方式0=不抽水 1=TCP池
+share: 1 #抽水矿池链接方式0=不抽水 1=TCP池
 share_alg: 0 #抽水算法。 0 为随机算法 1 为固定份额算法。
 p12_path: "./identity.p12" # p12证书地址 可用脚本generate-certificate.sh生成
 p12_pass: "mypass" #默认generate-certificate.sh 中密码为mypass如果修改了脚本中得密码需要同步修改配置文件中的密码
