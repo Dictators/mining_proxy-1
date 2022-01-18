@@ -35,12 +35,11 @@ sh install.sh
 
 ### 1.linux 
 
-- ETH 矿池中转搭建-哔哩哔哩  https://www.bilibili.com/video/BV1yP4y1H7Cj/
 - 油管:   https://youtu.be/YEB-rXnPI2A
 
 ### 2. windows 
 
-TODO
+油管:   https://youtu.be/uzDzCF0OXmo
 
 ### 3. linux docker
 
