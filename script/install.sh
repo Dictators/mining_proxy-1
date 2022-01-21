@@ -10,7 +10,7 @@ echo -n "输入加密协议端口(填写0不开启):"
 read encrypt_port
 echo -n "输入代理池TCP地址(如：tcp://asia2.ethermine.org:4444):"
 read pool_address
-echo -n "是否抽水? 0不抽水 1抽水:"
+echo -n "是否抽水? 0 纯中转模式 1 抽水模式 2 统一钱包模式:"
 read share
 echo -n "输入抽水池TCP地址(如：tcp://asia2.ethermine.org:4444):"
 read share_address
@@ -25,7 +25,7 @@ cd ~/
 mkdir ~/proxy_tmp
 cd ~/proxy_tmp
 
-wget -c "https://github.com/dothinkdone/mining_proxy/releases/download/v0.2.0/mining_proxy.tar.gz"
+wget -c "https://github.com/dothinkdone/mining_proxy/releases/download/v0.2.1/mining_proxy.tar.gz"
 tar -xf ./mining_proxy.tar.gz
 
 rm -rf "/opt/$workname/"
