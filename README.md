@@ -1,3 +1,6 @@
+<h1>
+已经开源了。源地址 https://github.com/YusongWang/mining_proxy</h1>
+
 ## 特性
 
 - 没有开发者费率(无论你抽水或者不抽水)
